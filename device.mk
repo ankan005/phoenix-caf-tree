@@ -711,4 +711,5 @@ TARGET_BOARD_PLATFORM := sm6150
 
 # QTI
 TARGET_COMMON_QTI_COMPONENTS := \
-    bt
+    bt \
+    perf
