@@ -185,8 +185,8 @@ PRODUCT_PACKAGES += \
     services-ext
 
 # Device Settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
+#PRODUCT_PACKAGES += \
+  #  XiaomiParts
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/parts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-parts.xml
@@ -526,13 +526,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml
 
-# QTI Common
-TARGET_COMMON_QTI_COMPONENTS := \
-    display \
-    perf \
-    wfd \
-    adreno
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.class_main.sh \
@@ -644,9 +637,10 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
 # Vibrator
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service
+ PRODUCT_PACKAGES += \
+#    android.hardware.vibrator@1.0-impl \
+#    android.hardware.vibrator@1.0-service
+     vendor.qti.hardware.vibrator.service.xiaomi_phoenix
 
 # Binder
 PRODUCT_PACKAGES += \
