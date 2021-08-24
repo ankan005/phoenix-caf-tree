@@ -11,3 +11,6 @@ persist.vendor.fpc.                u:object_r:vendor_fp_prop:s0
 
 # Xiaomi thermal daemon
 vendor.sys.thermal.                u:object_r:vendor_thermal_normal_prop:s0
+
+# XiaomiParts
+persist.disp.                   u:object_r:persist_disp_prop:s0

@@ -1,4 +1,4 @@
-#SELINUX_IGNORE_NEVERALLOWS := true
+SELINUX_IGNORE_NEVERALLOWS := true
 
 #
 # Copyright (C) 2020 The LineageOS Project
@@ -142,6 +142,7 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/phoenix
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 #TARGET_KERNEL_ADDITIONAL_FLAGS := \
  #   HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
@@ -212,7 +213,7 @@ VENDOR_SECURITY_PATCH := 2021-11-01
 
 # Sepolicy
 TARGET_SEPOLICY_DIR := msmsteppe
-include device/qcom/sepolicy_vndr/SEPolicy.mk
+#include device/qcom/sepolicy_vndr/SEPolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
