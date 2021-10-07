@@ -617,6 +617,10 @@ PRODUCT_PACKAGES += \
  PRODUCT_PACKAGES += \
      vendor.qti.hardware.vibrator.service.xiaomi_phoenix
 
+# VNDK
+$(foreach target, $(shell cat $(LOCAL_PATH)/vndk.txt), $(eval PRODUCT_PACKAGES += $(target).vendor))
+
+
 # Binder
 PRODUCT_PACKAGES += \
     libhidltransport \
@@ -664,3 +668,4 @@ TARGET_COMMON_QTI_COMPONENTS := \
     av \
     bt \
     media-legacy
+
