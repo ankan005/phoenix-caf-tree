@@ -1014,31 +1014,6 @@ vendor/lib/libdsd2pcm.so
 vendor/lib/libFlacSwDec.so
 -vendor/lib/libMpeg4SwEncoder.so
 
-# Misys
-system/system/etc/permissions/vendor.xiaomi.hardware.misys-V1.0-java-permission.xml
-system/system/etc/permissions/vendor.xiaomi.hardware.misys-V2.0-java-permission.xml
-system/system/etc/permissions/vendor.xiaomi.hardware.misys.V3_0-permission.xml
-system/system/framework/vendor.xiaomi.hardware.misys-V1.0-java.jar
-system/system/framework/vendor.xiaomi.hardware.misys-V2.0-java.jar
-system/system/framework/vendor.xiaomi.hardware.misys.V3_0.jar
-vendor/bin/hw/vendor.xiaomi.hardware.misys@1.0-service
-vendor/bin/hw/vendor.xiaomi.hardware.misys@2.0-service
-vendor/bin/hw/vendor.xiaomi.hardware.misys@3.0-service
-vendor/etc/init/vendor.xiaomi.hardware.misys@1.0-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.misys@2.0-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.misys@3.0-service.rc
--vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@1.0.xml
--vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@2.0.xml
--vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@3.0.xml
-vendor/lib64/hw/vendor.xiaomi.hardware.misys@1.0-impl.so
-vendor/lib64/hw/vendor.xiaomi.hardware.misys@2.0-impl.so
-vendor/lib64/hw/vendor.xiaomi.hardware.misys@3.0-impl.so
-vendor/lib64/libcheckpid.so
-vendor/lib64/liblogwrap_vendor.so
-vendor/lib64/vendor.xiaomi.hardware.misys@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.misys@2.0.so
-vendor/lib64/vendor.xiaomi.hardware.misys@3.0.so
-
 # NFC
 vendor/lib/libsn100u_fw.so
 
