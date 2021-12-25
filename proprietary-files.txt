@@ -1161,6 +1161,7 @@ etc/sysconfig/qti_whitelist.xml
 -system_ext/app/DeviceInfo/DeviceInfo.apk
 -system_ext/app/embms/embms.apk
 -system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system_ext/framework/qti-telephony-common.jar|0d3da7628506d66852de19f296a05f728710c4e3
 system_ext/etc/permissions/embms.xml
 system_ext/etc/permissions/qcrilhook.xml
 system_ext/etc/permissions/telephonyservice.xml
