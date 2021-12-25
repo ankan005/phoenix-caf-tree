@@ -512,6 +512,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml
 
+# QTI Common
+TARGET_COMMON_QTI_COMPONENTS := \
+    display \
+    perf \
+    wfd \
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.class_main.sh \
