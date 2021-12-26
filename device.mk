@@ -1,4 +1,5 @@
 BUILD _WITH_GAPPS=true
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 #
 # Copyright (C) 2020 The LineageOS Project
 #
@@ -17,6 +18,9 @@ $(call inherit-product, vendor/xiaomi/phoenix/phoenix-vendor.mk)
 
 # Include PSU if synced
 $(call inherit-product-if-exists, vendor/google/psu/google-psu.mk)
+
+# Inherit qcom common stuff
+$(call inherit-product, device/qcom/common/common.mk)
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -42,6 +46,11 @@ PRODUCT_COPY_FILES += \
    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml \
    $(LOCAL_PATH)/configs/google-hiddenapi-package-whitelist-carriersettings.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/google-hiddenapi-package-whitelist-carriersettings.xml \
    $(LOCAL_PATH)/permissions/privapp-permissions-google-carriersettings.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-google-carriersettings.xml
+
+# ANT+
+PRODUCT_PACKAGES += \
+    AntHalService-Soong \
+    com.dsi.ant@1.0.vendor
 
 # ATRACE_HAL
 PRODUCT_PACKAGES += \
@@ -159,6 +168,10 @@ PRODUCT_PACKAGES += \
     android.hidl.memory.block@1.0.vendor \
     libstdc++.vendor
 
+# Configstore
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.capabilityconfigstore@1.0
+
 # Crypto
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor \
@@ -172,8 +185,8 @@ PRODUCT_PACKAGES += \
     services-ext
 
 # Device Settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
+#PRODUCT_PACKAGES += \
+ #   XiaomiParts
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/parts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-parts.xml
@@ -191,6 +204,7 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libvulkan \
     memtrack.sm6150 \
+    libwfdaac_vendor \
     vendor.qti.hardware.display.allocator-service
 
 # Display interfaces
@@ -464,8 +478,8 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     telephony-ext \
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+#PRODUCT_BOOT_JARS += \
+ #   telephony-ext
 
 # FM
 PRODUCT_PACKAGES += \
@@ -474,7 +488,7 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+     $(LOCAL_PATH)
 
 # Perf
 PRODUCT_PACKAGES += \
@@ -517,6 +531,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     display \
     perf \
     wfd \
+    adreno
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -621,8 +636,8 @@ PRODUCT_PACKAGES += \
     libtinyxml2
 
 # Trust
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
+#PRODUCT_PACKAGES += \
+  #  vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \

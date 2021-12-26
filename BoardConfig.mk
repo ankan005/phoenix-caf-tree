@@ -4,7 +4,7 @@ SELINUX_IGNORE_NEVERALLOWS := true
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
@@ -39,11 +39,18 @@ TARGET_OTA_ASSERT_DEVICE := phoenix,phoenixin
 TARGET_NO_BOOTLOADER := true
 
 # Bootloader
-TARGET_BOARD_PLATFORM := sm6150
+#TARGET_BOARD_PLATFORM := sm6150
 TARGET_BOOTLOADER_BOARD_NAME := sm6150
 
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
+
+# Dex
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    WITH_DEXPREOPT ?= true
+  endif
+endif
 
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
@@ -77,13 +84,6 @@ TARGET_CAMERA_BOOTTIME_TIMESTAMP := true
 
 # Charger Mode
 BOARD_CHARGER_ENABLE_SUSPEND := true
-
-# Dex
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    WITH_DEXPREOPT ?= true
-  endif
-endif
 
 # Display
 TARGET_USES_HWC2 := true
@@ -215,7 +215,7 @@ VENDOR_SECURITY_PATCH := 2021-11-01
 
 # Sepolicy
 TARGET_SEPOLICY_DIR := msmsteppe
-#include device/qcom/sepolicy_vndr/SEPolicy.mk
+include device/qcom/sepolicy_vndr/SEPolicy.mk
 #BOARD_VENDOR_SEPOLICY_DIRS += device/qcom/sepolicy_vndr/generic/vendor/msmsteppe
 #BOARD_VENDOR_SEPOLICY_DIRS += device/qcom/sepolicy_vndr/qva/vendor/msmsteppe
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
