@@ -17,6 +17,7 @@
 package org.lineageos.settings.dirac;
 
 import android.os.Bundle;
+
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.collapsingtoolbar.R;
 
