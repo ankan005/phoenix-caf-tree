@@ -232,3 +232,5 @@ ro.support_one_handed_mode=true
 ro.secure=1 
 ro.debuggable=0
 
+ro.surface_flinger.set_idle_timer_ms=500
+ro.surface_flinger.set_touch_timer_ms=750
