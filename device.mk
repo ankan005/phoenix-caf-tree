@@ -507,8 +507,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/targetresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/targetresourceconfigs.xml
 
 # Overlays
-PRODUCT_PACKAGES += \
-    NoCutoutOverlay
+#PRODUCT_PACKAGES += \
+#    NoCutoutOverlay
 
 # Power
 PRODUCT_PACKAGES += \
