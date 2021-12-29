@@ -146,9 +146,9 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
 # Bluetooth (aptX)
-#vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
-#vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Encoder.so
-#vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Encoder.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
 
 # CarrierConfig - from sunfish RQ3A.210705.001-7380771-release-keys
 product/etc/CarrierSettings/a1_at.pb|735195bed5efac21d23f04839bcab8b963f42e17
