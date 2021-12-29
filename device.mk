@@ -1,3 +1,4 @@
+KERNEL_SD_LLVM_SUPPORT := false
 BUILD _WITH_GAPPS=true
 PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 #
@@ -147,6 +148,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0 \
     android.hardware.bluetooth@1.0.vendor \
     android.hardware.bluetooth.audio@2.0-impl \
     audio.bluetooth.default \
@@ -489,7 +491,8 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-     $(LOCAL_PATH)
+     $(LOCAL_PATH) \
+     hardware/qcom/display
 
 # Perf
 PRODUCT_PACKAGES += \
@@ -648,6 +651,9 @@ PRODUCT_PACKAGES += \
 # Vibrator
  PRODUCT_PACKAGES += \
      vendor.qti.hardware.vibrator.service.xiaomi_phoenix
+
+# VNDK
+PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
 # Binder
 PRODUCT_PACKAGES += \
