@@ -1,4 +1,4 @@
-KERNEL_SD_LLVM_SUPPORT := false
+KERNEL_SD_LLVM_SUPPORT := true
 BUILD _WITH_GAPPS=true
 PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 #
@@ -300,8 +300,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     org.ifaa.android.manager
 
-PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
+#PRODUCT_BOOT_JARS += \
+ #   org.ifaa.android.manager
 
 # Init
 PRODUCT_PACKAGES += \
