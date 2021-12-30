@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The LineageOS Project
+ * Copyright (C) 2021 Paranoid Android
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,19 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.dirac;
+package org.lineageos.settings.display;
 
 import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.collapsingtoolbar.R;
 
-public class DiracActivity extends CollapsingToolbarBaseActivity {
-
-    private static final String TAG_DIRAC = "dirac";
-
+public class LcdFeaturesPreferenceActivity extends CollapsingToolbarBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        getFragmentManager().beginTransaction().replace(R.id.content_frame,
-                new DiracSettingsFragment(), TAG_DIRAC).commit();
+        getFragmentManager().beginTransaction()
+                .replace(R.id.content_frame, new LcdFeaturesPreferenceFragment())
+                .commit();
     }
 }
