@@ -42,6 +42,9 @@ TARGET_BOOTLOADER_BOARD_NAME := sm6150
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
+# Bluetooth
+TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
+
 # Dex
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
@@ -110,9 +113,10 @@ TARGET_USES_ION := true
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
-ODM_MANIFEST_SKUS += \
-    phoenix
-ODM_MANIFEST_PHOENIX_FILES := $(DEVICE_PATH)/manifest_phoenix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(DEVICE_PATH)/device_framework_compatibility_matrix.xml \
+    vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
+
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_phoenix
