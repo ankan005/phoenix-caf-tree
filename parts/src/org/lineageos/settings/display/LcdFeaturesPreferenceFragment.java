@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.extendedos.settings.display;
+package org.lineageos.settings.display;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -24,13 +24,13 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
 
-import org.extendedos.settings.R;
+import org.lineageos.settings.R;
 
-public class DispFeaturesPreferenceFragment extends PreferenceFragment
+public class LcdFeaturesPreferenceFragment extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-    public static final String HBM_PROP = "persist.disp.hbm_mode";
-    public static final String CABC_PROP = "persist.disp.cabc_mode";
+    public static final String HBM_PROP = "persist.lcd.hbm_mode";
+    public static final String CABC_PROP = "persist.lcd.cabc_mode";
 
     private static final String KEY_HBM = "pref_hbm";
     private static final String KEY_CABC = "pref_cabc";
@@ -46,7 +46,7 @@ public class DispFeaturesPreferenceFragment extends PreferenceFragment
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.disp_features_settings);
+        addPreferencesFromResource(R.xml.device_prefs);
         mHbmPref = (ListPreference) findPreference(KEY_HBM);
         mHbmPref.setOnPreferenceChangeListener(this);
         mCabcPref = (ListPreference) findPreference(KEY_CABC);

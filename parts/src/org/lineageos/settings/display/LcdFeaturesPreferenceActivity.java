@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package org.extendedos.settings.display;
+package org.lineageos.settings.display;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
-public class DispFeaturesPreferenceActivity extends PreferenceActivity {
+public class LcdFeaturesPreferenceActivity extends PreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new DispFeaturesPreferenceFragment())
+                .replace(android.R.id.content, new LcdFeaturesPreferenceFragment())
                 .commit();
     }
 }

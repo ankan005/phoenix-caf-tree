@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package org.extendedos.settings.display;
+package org.lineageos.settings.display;
 
 import android.content.Context;
 import android.os.SystemProperties;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 
-import org.extendedos.settings.R;
+import org.lineageos.settings.R;
 
 public class HbmTileService extends TileService {
 
@@ -36,12 +36,12 @@ public class HbmTileService extends TileService {
     public void onCreate() {
         super.onCreate();
         context = getApplicationContext();
-        HbmModes = context.getResources().getStringArray(R.array.disp_hbm_modes);
-        HbmValues = context.getResources().getStringArray(R.array.disp_hbm_values);
+        HbmModes = context.getResources().getStringArray(R.array.lcd_hbm_modes);
+        HbmValues = context.getResources().getStringArray(R.array.lcd_hbm_values);
     }
 
     private void updateCurrentHbmMode() {
-        currentHbmMode = SystemProperties.getInt(DispFeaturesPreferenceFragment.HBM_PROP, 0);
+        currentHbmMode = SystemProperties.getInt(LcdFeaturesPreferenceFragment.HBM_PROP, 0);
     }
 
     private void updateHbmTile() {
@@ -68,7 +68,7 @@ public class HbmTileService extends TileService {
         } else {
             currentHbmMode++;
         }
-        SystemProperties.set(DispFeaturesPreferenceFragment.HBM_PROP, Integer.toString(currentHbmMode));
+        SystemProperties.set(LcdFeaturesPreferenceFragment.HBM_PROP, Integer.toString(currentHbmMode));
         updateHbmTile();
     }
 }

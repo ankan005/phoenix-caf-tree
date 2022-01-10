@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-on property:persist.disp.hbm_mode=*
-    write /sys/devices/platform/soc/soc:qcom,dsi-display/hbm ${persist.disp.hbm_mode}
+on property:persist.lcd.hbm_mode=*
+    write /sys/devices/platform/soc/soc:qcom,dsi-display/hbm ${persist.lcd.hbm_mode}
 
-on property:persist.disp.cabc_mode=*
-    write /sys/devices/platform/soc/soc:qcom,dsi-display/cabc ${persist.disp.cabc_mode}
+on property:persist.lcd.cabc_mode=*
+    write /sys/devices/platform/soc/soc:qcom,dsi-display/cabc ${persist.lcd.cabc_mode}
