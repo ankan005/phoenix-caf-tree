@@ -38,12 +38,12 @@ public class CabcTileService extends TileService {
     public void onCreate() {
         super.onCreate();
         context = getApplicationContext();
-        CabcModes = context.getResources().getStringArray(R.array.disp_cabc_modes);
-        CabcValues = context.getResources().getStringArray(R.array.disp_cabc_values);
+        CabcModes = context.getResources().getStringArray(R.array.lcd_cabc_modes);
+        CabcValues = context.getResources().getStringArray(R.array.lcd_cabc_values);
     }
 
     private void updateCurrentCabcMode() {
-        currentCabcMode = Arrays.asList(CabcValues).indexOf(SystemProperties.get(DispFeaturesPreferenceFragment.CABC_PROP, "0"));
+        currentCabcMode = Arrays.asList(CabcValues).indexOf(SystemProperties.get(LcdFeaturesPreferenceFragment.CABC_PROP, "0"));
     }
 
     private void updateCabcTile() {
@@ -70,7 +70,7 @@ public class CabcTileService extends TileService {
         } else {
             currentCabcMode++;
         }
-        SystemProperties.set(DispFeaturesPreferenceFragment.CABC_PROP, CabcValues[currentCabcMode]);
+        SystemProperties.set(LcdFeaturesPreferenceFragment.CABC_PROP, CabcValues[currentCabcMode]);
         updateCabcTile();
     }
 }

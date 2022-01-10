@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 Paranoid Android
+ * Copyright (C) 2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,19 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.display;
+package org.lineageos.settings;
 
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.collapsingtoolbar.R;
 
-public class LcdFeaturesPreferenceActivity extends PreferenceActivity {
+public class DevicePreferenceActivity extends CollapsingToolbarBaseActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new LcdFeaturesPreferenceFragment())
+                .replace(R.id.content_frame, new DevicePreferenceFragment())
                 .commit();
     }
 }

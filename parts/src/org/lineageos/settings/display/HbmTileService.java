@@ -36,12 +36,12 @@ public class HbmTileService extends TileService {
     public void onCreate() {
         super.onCreate();
         context = getApplicationContext();
-        HbmModes = context.getResources().getStringArray(R.array.disp_hbm_modes);
-        HbmValues = context.getResources().getStringArray(R.array.disp_hbm_values);
+        HbmModes = context.getResources().getStringArray(R.array.lcd_hbm_modes);
+        HbmValues = context.getResources().getStringArray(R.array.lcd_hbm_values);
     }
 
     private void updateCurrentHbmMode() {
-        currentHbmMode = SystemProperties.getInt(DispFeaturesPreferenceFragment.HBM_PROP, 0);
+        currentHbmMode = SystemProperties.getInt(LcdFeaturesPreferenceFragment.HBM_PROP, 0);
     }
 
     private void updateHbmTile() {
@@ -68,7 +68,7 @@ public class HbmTileService extends TileService {
         } else {
             currentHbmMode++;
         }
-        SystemProperties.set(DispFeaturesPreferenceFragment.HBM_PROP, Integer.toString(currentHbmMode));
+        SystemProperties.set(LcdFeaturesPreferenceFragment.HBM_PROP, Integer.toString(currentHbmMode));
         updateHbmTile();
     }
 }
