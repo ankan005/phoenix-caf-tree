@@ -28,6 +28,9 @@
 # Remosaic
 /vendor/bin/remosaic_daemon                                          u:object_r:remosaic_daemon_exec:s0
 
+# Sensors
+#/vendor/bin/hw/android\.hardware\.sensors@2.1-service\.op9-multihal                                                  u:object_r:hal_sensors_default_exec:s0
+
 # WiFi
 /vendor/bin/nv_mac                                                   u:object_r:vendor_wcnss_service_exec:s0
 
