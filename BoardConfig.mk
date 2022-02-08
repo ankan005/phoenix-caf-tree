@@ -1,4 +1,5 @@
 #SELINUX_IGNORE_NEVERALLOWS := true
+
 #
 # Copyright (C) 2020 The LineageOS Project
 #
@@ -36,7 +37,7 @@ TARGET_OTA_ASSERT_DEVICE := phoenix,phoenixin
 TARGET_NO_BOOTLOADER := true
 
 # Bootloader
-#TARGET_BOARD_PLATFORM := sm6150
+TARGET_BOARD_PLATFORM := sm6150
 TARGET_BOOTLOADER_BOARD_NAME := sm6150
 
 # APEX
@@ -136,7 +137,7 @@ BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 TARGET_KERNEL_ARCH := arm64
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_CONFIG := phoenix_defconfig
-TARGET_KERNEL_CLANG_COMPILE := true
+#TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/phoenix
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_BOOTIMG_HEADER_VERSION := 2
@@ -191,7 +192,7 @@ TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
 
 # QCOM
-#BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
@@ -211,7 +212,7 @@ VENDOR_SECURITY_PATCH := 2021-11-01
 
 # Sepolicy
 TARGET_SEPOLICY_DIR := msmsteppe
-#include device/qcom/sepolicy_vndr/SEPolicy.mk
+include device/qcom/sepolicy_vndr/SEPolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor

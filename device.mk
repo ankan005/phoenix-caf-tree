@@ -1,5 +1,7 @@
+PRODUCT_EXTRA_VNDK_VERSIONS := 30
 BUILD _WITH_GAPPS=true
 PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
+KERNEL_SD_LLVM_SUPPORT := true
 #
 # Copyright (C) 2020 The LineageOS Project
 #
@@ -193,8 +195,8 @@ PRODUCT_PACKAGES += \
     services-ext
 
 # Device Settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
+#PRODUCT_PACKAGES += \
+ #   XiaomiParts
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/parts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-parts.xml \
@@ -319,8 +321,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     org.ifaa.android.manager
 
-PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
+#PRODUCT_BOOT_JARS += \
+ #   org.ifaa.android.manager
 
 # Init
 PRODUCT_PACKAGES += \
@@ -612,8 +614,8 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     telephony-ext \
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+#PRODUCT_BOOT_JARS += \
+ #   telephony-ext
 
 # Thermal
 PRODUCT_PACKAGES += \
