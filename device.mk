@@ -194,17 +194,6 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     services-ext
 
-# Device Settings
-#PRODUCT_PACKAGES += \
- #   XiaomiParts
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/parts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-parts.xml \
-    $(LOCAL_PATH)/parts/init.xiaomiparts.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.xiaomiparts.rc
-
-PRODUCT_PRODUCT_PROPERTIES += \
-     persist.disp.hbm_mode=0 \
-     persist.lcd.cabc_mode=1
 
 # Display/Graphics
 PRODUCT_PACKAGES += \
